@@ -1,9 +1,6 @@
 import React from "react";
 import './button.css';
-
-type IButton = {
-
-}
+import { IButton } from "../../../models";
 
 export const Button: React.FC<IButton> = () => {
     return (<></>)
