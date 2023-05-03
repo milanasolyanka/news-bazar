@@ -10,22 +10,22 @@ import { Pagination } from './components/Pagination';
 function App() {
   const [value, setValue] = useState<string>('');
   const [news, setNews] = useState<INewsList>();
-  const [pages, setPages] = useState<number[]>([1, 2, 3, 4]);
+  const [pages, setPages] = useState<number[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
     getNews('us', currentPage).then((res) => {
       setNews(res.data);
+      getPageCount(res.data.totalResults)
     });
   }, [currentPage]);
 
-  // const getPageCount = (count: number) => {
-  //   if (news !== undefined) {
-  //     const pageCount = Math.ceil(news.totalResults / 10);
-  //     for (let i = 1; i <= pageCount; i++) pages.push(i);
-  //     console.log(pages);
-  //   }
-  // };
+  const getPageCount = (count: number) => {
+      const pageCount = Math.ceil(count / 10);
+      const pagesArray = [];
+      for (let i = 1; i <= pageCount; i++) pagesArray.push(i);
+      setPages(pagesArray);
+  };
 
   return (
     <div>
