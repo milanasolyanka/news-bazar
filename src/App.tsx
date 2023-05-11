@@ -16,19 +16,19 @@ function App() {
   useEffect(() => {
     getNews('us', currentPage).then((res) => {
       setNews(res.data);
-      getPageCount(res.data.totalResults)
+      getPageCount(res.data.totalResults);
     });
   }, [currentPage]);
 
   const getPageCount = (count: number) => {
-      const pageCount = Math.ceil(count / 10);
-      const pagesArray = [];
-      for (let i = 1; i <= pageCount; i++) pagesArray.push(i);
-      setPages(pagesArray);
+    const pageCount = Math.ceil(count / 10);
+    const pagesArray = [];
+    for (let i = 1; i <= pageCount; i++) pagesArray.push(i);
+    setPages(pagesArray);
   };
 
   return (
-    <div  className='mainPage'>
+    <div className="mainPage">
       <FormField />
       {news !== undefined && (
         <div>
@@ -37,7 +37,6 @@ function App() {
             totalResults={news.totalResults}
             articles={news.articles}
           />
-          <Pagination pages={pages} changePage={setCurrentPage} />
         </div>
       )}
     </div>
@@ -45,3 +44,4 @@ function App() {
 }
 
 export default App;
+//<Pagination pages={pages} changePage={setCurrentPage} />
