@@ -9,11 +9,12 @@ export const NewsList: React.FC<INewsList> = ({
   articles,
 }) => {
   return (
-    <div>
+    <div className="newsList-container">
       {status === 'ok' ? (
         <div>
-          <h1>Было найдено: {totalResults}</h1>
-          {articles.map((article) => <NewsElement article={article}/>)}
+          {articles.map((article) => (
+            <NewsElement article={article} />
+          ))}
         </div>
       ) : (
         <div>Произошла ошибка.</div>
@@ -21,3 +22,4 @@ export const NewsList: React.FC<INewsList> = ({
     </div>
   );
 };
+//<h1>Было найдено: {totalResults}</h1>

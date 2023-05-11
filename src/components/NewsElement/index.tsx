@@ -9,11 +9,12 @@ interface props {
 export const NewsElement: React.FC<props> = ({ article }) => {
   return (
     <div className="article-card">
-      <div>{article.title}</div>
-      <div>{article.description}</div>
-      <div>
-        <div>{article.author}</div>
-        <div>{article.publishedAt}</div>
+      <div className="article-card__picture">
+        <img src={article.urlToImage} />
+      </div>
+      <div className="article-card__main-info">
+        <div className="main-info_title">{article.title}</div>
+        <div className="main-info__desc">{article.description}</div>
       </div>
     </div>
   );

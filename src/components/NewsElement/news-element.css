@@ -1,4 +1,29 @@
 .article-card {
-    border: 1px solid black;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  background: #deebe9;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 15px 15px 15px 15px;
+
+  font-family: system-ui;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 16px;
+}
+.article-card__picture {
+  padding-right: 10px;
+}
+img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.main-info_title {
+  font-weight: 300;
+  text-decoration-line: underline;
+}
+.main-info__desc {
+  font-weight: 200;
 }

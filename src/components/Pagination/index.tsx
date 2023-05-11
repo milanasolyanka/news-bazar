@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './pagination.css';
 
 interface IPagination {
   pages: number[];
@@ -8,9 +9,9 @@ interface IPagination {
 
 export const Pagination: React.FC<IPagination> = ({ pages, changePage }) => {
   return (
-    <div>
+    <div className='pagination'>
       {pages.map((page) => (
-        <span onClick={() => changePage(page)}>{page}</span>
+        <span className='pagination-onePage' onClick={() => changePage(page)}>{page}</span>
       ))}
     </div>
   );
