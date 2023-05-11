@@ -21,8 +21,13 @@ img {
   border-radius: 10px;
 }
 .main-info_title {
+  cursor: default;
+}
+.main-info_title {
+  cursor: pointer;
   font-weight: 300;
   text-decoration-line: underline;
+  margin-bottom: 5px;
 }
 .main-info__desc {
   font-weight: 200;
